@@ -34,17 +34,17 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .ball {
-  width: 100px;
-  height: 100px;
-  background-color: #4a5565;
-  box-shadow: 1px 2px 2px 0px black;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 0px 4px #222c;
+  
   border-radius: 50%;
   position: fixed;
-  top: -5px;
-  left: 0;
+  top: -15px;
+  left: -20px;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
+  mix-blend-mode: hard-light;
 }
 
 </style>

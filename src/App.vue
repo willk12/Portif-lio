@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import MouseFollower from './components/MouseFollower.vue';
+import Footer from './components/Footer.vue';
+
+
+
+
 
 </script>
 
 <template>
+ 
   <MouseFollower />
   <div class="h-[166px]">
     <header class="w-full bg-gray-600 py-3  navbar">
@@ -22,9 +28,13 @@ import MouseFollower from './components/MouseFollower.vue';
   </div>
 
   <RouterView />
+  <Footer />
+
 </template>
 
 <style scoped>
+
+
 
 .navbar{
 

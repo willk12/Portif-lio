@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 body{
-    overflow: hidden;
-    background-color: #dadada;
+    overflow-x: hidden;
+    background-color: #e3e3e3;
 }
 
