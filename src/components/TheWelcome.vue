@@ -10,11 +10,10 @@
       class="h-[400px] rounded-lg p-1 mt-4 w-[60%] overflow-hidden relative text-3xl text-gray-600 left-1 text-center"
     >
       <div
-        class="gradient-circle text-3xl text-gray-600 absolute"
-      ></div>
-
-      <div class="moveOn h-full m-auto p-4 bg-white rounded flex flex-col gap-2 justify-center">
-        <p><strong>Oi, tudo bem?</strong></p>
+        class="moveOn midTitle h-full m-auto p-1 bg-white rounded flex flex-col gap-2 justify-center"
+      >
+       <div class="flex flex-col gap-2 justify-center p-4 bg-white w-full h-full relative rounded">
+         <p><strong>Oi, tudo bem?</strong></p>
         <p>Me chamo William Almeida Lima e tenho 28 anos!</p>
         <p>
           Atualmente, estou me aprofundando em Vue.js e Tailwind CSS sempre buscando evoluir
@@ -24,6 +23,7 @@
           Sou apaixonado por design e tecnologia, gosto de trabalhar em equipe e acredito no poder
           da troca de conhecimento para crescer junto.
         </p>
+       </div>
       </div>
     </div>
   </div>
@@ -62,14 +62,29 @@
 import gsap from 'gsap'
 </script>
 
-<style scoped>
-.gradient-circle {
-        background: linear-gradient(270deg, #42d392, #42d392, #647eff);
+<style scoped lang="scss">
+.midTitle {
+  &::before {
+    content: '';
+    position: absolute;
+    /* top: -50px; */
+    left: -425px;
+    width: 2146px;
+    height: 1495px;
+    /* border-radius: 50%; */
+    background: linear-gradient(270deg, #42d392, #42d392, #647eff);
     animation: gradientShift-14d3142e 3s ease-in-out infinite;
-    left: -84%;
-    top: -81%;
-    width: 3000px;
-    height: 3000px;
+    z-index: -1;
+  }
+}
+
+.gradient-circle {
+  background: linear-gradient(270deg, #42d392, #42d392, #647eff);
+  animation: gradientShift-14d3142e 3s ease-in-out infinite;
+  left: -84%;
+  top: -81%;
+  width: 3000px;
+  height: 3000px;
 }
 
 .moveOn {
