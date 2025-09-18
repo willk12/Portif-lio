@@ -36,15 +36,15 @@ onUnmounted(() => {
 .ball {
   width: 50px;
   height: 50px;
-  box-shadow: 0px 0px 4px #222c;
-  
+  box-shadow: 0px 0px 10px 10px rgb(0, 0, 0);
+  background-color:#f3f4f6;
   border-radius: 50%;
   position: fixed;
   top: -15px;
   left: -20px;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: hard-light;
+  mix-blend-mode: overlay;
 }
 
 </style>
