@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full">
-    <h1 class="text-gray-600 text-4xl text-center split opacity-0">Olá meu nome é William 👋🏼</h1>
-    <h2 class="text-gray-400 text-2xl text-center split opacity-0">Web Designer & Desenvolvedor Front-End</h2>
+    <h1 class="text-gray-600 text-4xl text-center ">Olá meu nome é William 👋🏼</h1>
+    <h2 class="text-gray-400 text-2xl text-center ">Web Designer & Desenvolvedor Front-End</h2>
   </div>
 
   <div class="w-full flex justify-center items-center">
@@ -61,28 +61,6 @@
 <script setup lang="ts">
 import gsap from 'gsap'
 
-gsap.registerPlugin(SplitText);
-
-console.clear();
-
-document.fonts.ready.then(() => {
-  gsap.set(".split", { opacity: 1 });
-
-  const split = SplitText.create(".split", {
-    type: "words",
-    wordsClass: "word++",
-    wordDelimiter: String.fromCharCode(8205)
-  });
-
-  gsap.from(split.words, {
-    y: -100,
-    opacity: 0,
-    rotation: "random(-80, 80)",
-    stagger: 0.1,
-    duration: 1,
-    ease: "back"
-  });
-});
 
 </script>
 
