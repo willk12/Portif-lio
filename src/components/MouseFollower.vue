@@ -1,7 +1,9 @@
 <template>
     <div class="ball" ref="ball">
+    
 
     </div>
+
 </template>
 
 <script setup>
@@ -14,7 +16,7 @@ const moveball = (event)=>{
     gsap.to(ball.value,{
         x: event.clientX,
         y: event.clientY,
-        duration: 0.9,
+        duration: 1.5,
         ease: "power2.out"
     });
 }
@@ -44,7 +46,12 @@ onUnmounted(() => {
   left: -20px;
   pointer-events: none;
   z-index: 9999;
+<<<<<<< HEAD
   mix-blend-mode: overlay;
+=======
+  mix-blend-mode: normal;
+  background: linear-gradient(45deg, #42444441, #ffffff6e);
+>>>>>>> 52da79df31a85fcb7fe12b3282dcb4eddedb80f1
 }
 
 </style>
