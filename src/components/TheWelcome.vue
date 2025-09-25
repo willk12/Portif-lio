@@ -1,7 +1,9 @@
 <template>
   <div class="w-full h-full">
-    <h1 class="text-gray-600 text-4xl text-center ">Olá meu nome é William 👋🏼</h1>
-    <h2 class="text-gray-400 text-2xl text-center ">Web Designer & Desenvolvedor Front-End</h2>
+    <div class=" flex justify-center items-center">
+      <h1 class="text-gray-600 text-4xl text-center split">Olá meu nome é William </h1> <h2 class="text-4xl">😁</h2>
+    </div>
+    <h2 class="text-gray-600 text-2xl text-center split" >Web Designer & Desenvolvedor Front-End</h2>
   </div>
 
   <div class="w-full flex justify-center items-center">
@@ -28,43 +30,82 @@
     </div>
   </div>
 
-  <div class="w-full flex justify-center items-center mt-[100px] moveOn">
-    <ul class="text-2xl font-bold flex gap-4 text-gray-600 cursor-pointer">
-      <li>📝Ver Portifólio</li>
-      <li>📞Fale Comigo</li>
-      <li>💪Ver Skills</li>
+  <div class="w-full flex justify-center items-center mt-[100px]  ">
+    <ul class="text-2xl font-bold flex gap-4 text-white cursor-pointer justify-center items-center">
+      <li class="bg-gray-400 p-2 rounded flex gap-2 transform"><div><img src="./photos/wirte.png" alt="" class="w-[40px] transform-revert"></div><div class="transform-revert">Ver Portifólio</div></li>
+      <li class="bg-gray-400 p-4 rounded flex gap-2 transform"><div><img src="./photos/muscle.png" alt="" class="w-[40px] transform-revert"></div><div class="transform-revert">Ver Skills</div></li>
+      <li class="bg-gray-500 p-2 rounded flex gap-2 transform"><div><img src="./photos/telephone-call.png" alt="" class="w-[40px] transform-revert"></div><div class="transform-revert">Fale Comigo</div></li>
     </ul>
   </div>
+''
+  <div class="mb-2">
+    <div class="px-[200px] mt-24 mb-1  bg-gray-600 text-white p-4 w-400 -left-10 relative transform">
+    <h2 class=" text-3xl transform-revert">Minhas Especialidades</h2>
 
-  <div class="px-[200px] mt-24 moveOn">
-    <h2 class="text-gray-600 text-3xl">Minhas Especialidades</h2>
-
-    <ul class="list-disc text-gray-600 text-2xl mt-4">
+    <ul class="text-shadow-xs text-shadow-black text-2xl mt-4 transform-revert relative -left-4">
       <li>Front-End Moderno (Vue, React, Tailwind, GSAP)</li>
       <li>Design Responsivo e UX/UI</li>
       <li>Animações e Interatividade</li>
       <li>Metodologias Ágeis</li>
     </ul>
   </div>
+  <div class="px-[200px] p-4  flex flex-col justify-end items-end  bg-gray-600 text-white w-400 relative -right-100 transform">
+    <h2 class=" text-3xl mr-[9%] transform-revert relative -left-3" >Minhas Skills</h2>
 
-  <div class="px-[200px] mt-24 flex flex-col justify-end items-end moveOn">
-    <h2 class="text-gray-600 text-3xl mr-[9%]">Minhas Skills</h2>
-
-    <ul class="list-disc text-gray-600 text-2xl mt-4">
+    <ul class="text-shadow-xs  text-2xl mt-4 transform-revert">
       <li>HTML, CSS, JavaScript</li>
       <li>Vue.js, React</li>
       <li>Tailwind, GSAP</li>
       <li>Git flow, Metodologias Ágeis</li>
     </ul>
   </div>
+  </div>
 </template>
 <script setup lang="ts">
-import gsap from 'gsap'
+import { onMounted } from "vue";
+import gsap from "gsap";
+
+onMounted(() => {
+  const splits = document.querySelectorAll(".split");
+
+  splits.forEach(split => {
+    const chars = split.textContent?.split("") || [];
+    split.textContent = "";
+
+    chars.forEach(char => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char; // preserva espaço
+      span.style.display = "inline-block";
+      split.appendChild(span);
+    });
+
+    const spanChars = split.querySelectorAll("span");
+
+    gsap.from(spanChars, {
+      duration: 1,
+      y: 100,
+      rotation: 90,
+      opacity: 0,
+      ease: "elastic.out(1, 0.5)",
+      stagger: 0.03
+    });
+  });
+});
 
 
 </script>
 
 <style scoped lang="scss">
+
+.transform{
+  transform: skew(10deg);
+
+}
+
+.transform-revert{
+  transform: skew(-10deg);
+}
+
 .midTitle {
   &::before {
     content: '';
@@ -74,14 +115,14 @@ import gsap from 'gsap'
     width: 2146px;
     height: 1495px;
     /* border-radius: 50%; */
-    background: linear-gradient(270deg, #42d392, #42d392, #647eff);
+    background: linear-gradient(270deg, #dedede, #ffffff, #727272);
     animation: gradientShift-14d3142e 3s ease-in-out infinite;
     z-index: -1;
   }
 }
 
 .gradient-circle {
-  background: linear-gradient(270deg, #42d392, #42d392, #647eff);
+  background: linear-gradient(270deg, #ffffff, #000000, #ffffff);
   animation: gradientShift-14d3142e 3s ease-in-out infinite;
   left: -84%;
   top: -81%;

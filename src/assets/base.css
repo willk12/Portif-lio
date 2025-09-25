@@ -3,6 +3,10 @@
 
 body{
     overflow-x: hidden;
-    background-color: #e3e3e3;
+    background: linear-gradient(175deg, #c2c1c1 0%, #fff 50%, #c2c1c1 80%);
 }
 
+::selection {
+    background-color: rgba(34, 34, 34, 0.445);
+    color: white;
+}

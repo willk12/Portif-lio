@@ -16,7 +16,7 @@ const moveball = (event)=>{
     gsap.to(ball.value,{
         x: event.clientX,
         y: event.clientY,
-        duration: 1.5,
+        duration: 0.3,
         ease: "power2.out"
     });
 }
@@ -38,7 +38,7 @@ onUnmounted(() => {
 .ball {
   width: 50px;
   height: 50px;
-  box-shadow: 0px 0px 10px 10px rgb(0, 0, 0);
+  box-shadow: 0px 0px 1px 0px rgb(0, 0, 0);
   background-color:#f3f4f6;
   border-radius: 50%;
   position: fixed;
@@ -46,8 +46,8 @@ onUnmounted(() => {
   left: -20px;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: normal;
-  background: linear-gradient(45deg, #42444441, #ffffff6e);
+  mix-blend-mode: difference;
+  background: linear-gradient(45deg, #42444400, #ffffff6e);
 }
 
 </style>
